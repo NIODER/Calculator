@@ -1,4 +1,5 @@
-﻿using Application.Sum.GetSumQuery;
+﻿using Application.Sub.GetSubQuery;
+using Application.Sum.GetSumQuery;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,7 +16,22 @@ public class CalculatorController(ISender sender, ILogger<CalculatorController> 
     {
         var query = new GetSumQuery(num1, num2);
         var result = await _sender.Send(query);
-        _logger.LogDebug("Sum executed for numbers {num1}, {num2}.", num1, num2);
+        _logger.LogInformation("Sum executed for numbers {num1}, {num2}.", num1, num2);
         return Ok(result);
+    }
+
+    [HttpGet("sub")]
+    public async Task<IActionResult> GetSubAsync(decimal num1, decimal num2)
+    {
+        var query = new GetSubQuery(num1, num2);
+        var result = await _sender.Send(query);
+        _logger.LogInformation("Subtraction executed for numbers {num1}, {num2}", num1, num2);
+        return Ok(result);
+    }
+
+    [HttpGet("mul")]
+    public async Task<IActionResult> GetMulAsync(decimal num1, decimal num2)
+    {
+        throw new NotImplementedException();
     }
 }
