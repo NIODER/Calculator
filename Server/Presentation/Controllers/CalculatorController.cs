@@ -1,4 +1,5 @@
-﻿using Application.Sub.GetSubQuery;
+﻿using Application.Multiply.GetMulQuery;
+using Application.Sub.GetSubQuery;
 using Application.Sum.GetSumQuery;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -32,6 +33,9 @@ public class CalculatorController(ISender sender, ILogger<CalculatorController> 
     [HttpGet("mul")]
     public async Task<IActionResult> GetMulAsync(decimal num1, decimal num2)
     {
-        throw new NotImplementedException();
+        var query = new GetMulQuery(num1, num2);
+        var result = await _sender.Send(query);
+        _logger.LogInformation("Multiplication executed for numbers {num1}, {num2}", num1, num2);
+        return Ok(result);
     }
 }

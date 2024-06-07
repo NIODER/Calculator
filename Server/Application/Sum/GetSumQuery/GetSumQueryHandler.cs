@@ -1,13 +1,14 @@
-﻿using Domain;
+﻿using Application.Common;
+using Domain;
 using MediatR;
 
 namespace Application.Sum.GetSumQuery;
 
-internal class GetSumQueryHandler : IRequestHandler<GetSumQuery, SumResult>
+internal class GetSumQueryHandler : IRequestHandler<GetSumQuery, CalcResult>
 {
-    public Task<SumResult> Handle(GetSumQuery request, CancellationToken cancellationToken)
+    public Task<CalcResult> Handle(GetSumQuery request, CancellationToken cancellationToken)
     {
         var result = Calculator.Add(request.Number1, request.Number2);
-        return Task.FromResult(new SumResult(request.Number1, request.Number2, result));
+        return Task.FromResult(new CalcResult("Sum", request.Number1, request.Number2, result));
     }
 }
