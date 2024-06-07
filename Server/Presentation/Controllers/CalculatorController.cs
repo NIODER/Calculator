@@ -1,4 +1,5 @@
-﻿using Application.Multiply.GetMulQuery;
+﻿using Application.Division.GetDivisionQuery;
+using Application.Multiply.GetMulQuery;
 using Application.Sub.GetSubQuery;
 using Application.Sum.GetSumQuery;
 using MediatR;
@@ -36,6 +37,15 @@ public class CalculatorController(ISender sender, ILogger<CalculatorController> 
         var query = new GetMulQuery(num1, num2);
         var result = await _sender.Send(query);
         _logger.LogInformation("Multiplication executed for numbers {num1}, {num2}", num1, num2);
+        return Ok(result);
+    }
+
+    [HttpGet("div")]
+    public async Task<IActionResult> GetDivAsync(decimal num1, decimal num2)
+    {
+        var query = new GetDivQuery(num1, num2);
+        var result = await _sender.Send(query);
+        _logger.LogInformation("Division executed for number {num1}, {num2}", num1, num2);
         return Ok(result);
     }
 }
