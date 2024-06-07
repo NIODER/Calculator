@@ -5,27 +5,24 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{FEB9A8ED-50F9-4757-A98C-6100DBD33815}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation", "Server\Presentation\Presentation.csproj", "{CDD61A31-CF6E-4EB2-B64B-4B10109FB340}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Presentation", "Server\Presentation\Presentation.csproj", "{CDD61A31-CF6E-4EB2-B64B-4B10109FB340}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Server\Application\Application.csproj", "{64700478-9100-49E0-980A-FCA41F777EF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Server\Application\Application.csproj", "{64700478-9100-49E0-980A-FCA41F777EF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Server\Domain\Domain.csproj", "{3567E7A4-41B3-4A23-9EFA-6BF1012BF4F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Server\Domain\Domain.csproj", "{3567E7A4-41B3-4A23-9EFA-6BF1012BF4F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleClient", "ConsoleClient\ConsoleClient.csproj", "{E938DE9E-069E-458E-A324-B92C9B8D994B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleClient", "ConsoleClient\ConsoleClient.csproj", "{E938DE9E-069E-458E-A324-B92C9B8D994B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{1CF543A2-56A2-43F3-9155-DE7EFF715CD4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServerTests", "ServerTests", "{D93902E4-2D3C-42C7-9C8C-59BD9F62C844}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainTests", "Tests\ServerTests\DomainTests\DomainTests.csproj", "{99C42399-84E9-42CA-91A4-066DDE17F366}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainTests", "Tests\ServerTests\DomainTests\DomainTests.csproj", "{99C42399-84E9-42CA-91A4-066DDE17F366}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{CDD61A31-CF6E-4EB2-B64B-4B10109FB340}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -49,11 +46,17 @@ Global
 		{99C42399-84E9-42CA-91A4-066DDE17F366}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99C42399-84E9-42CA-91A4-066DDE17F366}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{CDD61A31-CF6E-4EB2-B64B-4B10109FB340} = {FEB9A8ED-50F9-4757-A98C-6100DBD33815}
 		{64700478-9100-49E0-980A-FCA41F777EF3} = {FEB9A8ED-50F9-4757-A98C-6100DBD33815}
 		{3567E7A4-41B3-4A23-9EFA-6BF1012BF4F7} = {FEB9A8ED-50F9-4757-A98C-6100DBD33815}
 		{D93902E4-2D3C-42C7-9C8C-59BD9F62C844} = {1CF543A2-56A2-43F3-9155-DE7EFF715CD4}
 		{99C42399-84E9-42CA-91A4-066DDE17F366} = {D93902E4-2D3C-42C7-9C8C-59BD9F62C844}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5451B8C3-41B3-42E4-9771-1E9E89E6F010}
 	EndGlobalSection
 EndGlobal
